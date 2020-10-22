@@ -9,7 +9,7 @@ ExternalProject_Add(zip
     CMAKE_ARGS      -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}/../external
 )
 
-add_library(mercury SHARED HGLog.cpp)
+add_library(mercury SHARED HGLog.cpp HGELFFile.cpp)
 
 target_include_directories(mercury PUBLIC ../inc)
 target_compile_features(mercury PRIVATE cxx_std_17)
