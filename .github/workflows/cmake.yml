@@ -5,6 +5,14 @@ env:
   BUILD_TYPE: Release
 
 jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -13,10 +21,9 @@ jobs:
       # install deps
       #- name: Update System
       #  run: sudo apt-get update && sudo apt-get upgrade -yq
-      - name: Download and Extract BOOST v1.74
+      - name: Extract BOOST v1.74
         shell: bash
         run: |
-          curl https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz
           tar -xzvf ${{runner.workspace}}/boost_1_74_0.tar.gz
       - name: Build and Install BOOST v1.73
         shell: bash
