@@ -19,7 +19,7 @@ jobs:
           # I have been trolled by CDN redirection for hours... Wow!
           curl -L https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz -s
           mkdir ${{runner.workspace}}/boost_1_74_0
-          tar -C ${{runner.workspace}}/boost_1_74_0 -xzvf ${{runner.workspace}}/boost_1_74_0.tar.gz
+          tar -xzvf ${{runner.workspace}}/boost_1_74_0.tar.gz --directory ${{runner.workspace}}/boost_1_74_0
       - name: Build and Install BOOST v1.74
         shell: bash
         working-directory: ${{runner.workspace}}/boost_1_74_0
