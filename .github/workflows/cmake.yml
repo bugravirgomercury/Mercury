@@ -16,15 +16,15 @@ jobs:
       - name: Download and Extract BOOST v1.74
         shell: bash
         run: |
-          # I hope that works... Looks like it is being redirected!
-          curl -L https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz -v
+          # I have been trolled by CDN redirection for hours... Wow!
+          curl -L https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz -s
           tar -xzvf ${{runner.workspace}}/boost_1_74_0.tar.gz
-      - name: Build and Install BOOST v1.73
+      - name: Build and Install BOOST v1.74
         shell: bash
         working-directory: ${{runner.workspace}}/boost_1_74_0
         run: |
-          ./bootstrap.sh --prefix=$GITHUB_WORKSPACE/external --with-libraries=system,filesystem,unit_test_framework
-          ./b2 install
+          ${{runner.workspace}}/boost_1_74_0/bootstrap.sh --prefix=$GITHUB_WORKSPACE/external --with-libraries=system,filesystem,unit_test_framework
+          ${{runner.workspace}}/boost_1_74_0/b2 install
 
       # build project
       - name: Create Build Environment
