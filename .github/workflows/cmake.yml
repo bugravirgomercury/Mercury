@@ -23,7 +23,7 @@ jobs:
         shell: bash
         working-directory: ${{runner.workspace}}/boost_1_74_0
         run: |
-          ${{runner.workspace}}/boost_1_74_0/bootstrap.sh --prefix=$GITHUB_WORKSPACE/external --with-libraries=system,filesystem,unit_test_framework
+          ${{runner.workspace}}/boost_1_74_0/bootstrap.sh --prefix=$GITHUB_WORKSPACE/external --with-libraries=system,filesystem,test
           ${{runner.workspace}}/boost_1_74_0/b2 install
 
       # build project
