@@ -1,4 +1,4 @@
-find_package (Boost COMPONENTS system filesystem unit_test_framework REQUIRED)
+find_package (Boost COMPONENTS system filesystem test REQUIRED)
 include_directories (${mercury_SOURCE_DIR}/inc
                      ${Boost_INCLUDE_DIRS}
                      )
