@@ -16,7 +16,8 @@ jobs:
       - name: Download and Extract BOOST v1.74
         shell: bash
         run: |
-          curl https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz -s
+          # What the hell...
+          curl https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz -v
           tar -xzvf ${{runner.workspace}}/boost_1_74_0.tar.gz
       - name: Build and Install BOOST v1.73
         shell: bash
