@@ -14,7 +14,9 @@ jobs:
         args: https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz --output ${{runner.workspace}}/boost_1_74_0.tar.gz
     - name: Debug curl
       shell: bash
-      run: ls
+      run: |
+        ls > list.txt
+        cat list.txt
 
   build:
     runs-on: ubuntu-latest
