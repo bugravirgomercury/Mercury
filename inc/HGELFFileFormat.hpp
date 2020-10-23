@@ -8,7 +8,8 @@ enum class HGELFBitWidth : std::uint8_t {
 
 enum class HGELFEndianness : std::uint8_t {
     Little = 1,
-    Big = 2
+    Big = 2,
+    None = 0
 };
 
 enum class HGELFType : std::uint16_t {
