@@ -9,7 +9,5 @@ int main (int argc, const char **argv)
     argv++;
     argc--;
 
-    
-
     return 0;
 }
