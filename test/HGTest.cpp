@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #define BOOST_TEST_MODULE HGELFFileFormatTests
 #include <boost/test/unit_test.hpp>
 

@@ -1,3 +1,7 @@
+#
+# Created by Buğra Kadirhan.
+#
+
 include_directories (${mercury_SOURCE_DIR}/inc
                      ${Boost_INCLUDE_DIRS}
                      )

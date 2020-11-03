@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #include <HGELFFile.hpp>
 #include <cstdint>
 #include <vector>

@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #include <HGLog.hpp>
 #include <cstdarg>
 #include <cstdio>

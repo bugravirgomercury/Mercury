@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #pragma once
 
 #define HGLOG(fmt, ...) do { HGLog (__FILE__, __PRETTY_FUNCTION__, __LINE__, fmt, __VA_ARGS__); } while (0)

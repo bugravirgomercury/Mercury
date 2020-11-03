@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #include <iostream>
 #include <string>
 

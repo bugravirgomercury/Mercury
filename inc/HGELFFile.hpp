@@ -1,3 +1,7 @@
+///
+/// Created by Buğra Kadirhan.
+///
+
 #pragma once
 
 #include <HGELFFileFormat.hpp>
