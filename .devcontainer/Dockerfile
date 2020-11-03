@@ -17,4 +17,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && cd /opt/build/boost/boost_1_74_0 \
     && ./bootstrap.sh --prefix=/usr/ --with-libraries=system,filesystem,test \
     && ./b2 -j 2 install                                                   \
-    ldconfig
+    && ldconfig
