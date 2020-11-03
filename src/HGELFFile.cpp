@@ -44,9 +44,11 @@ HGELFFile::makeFromScratch(
     std::vector<std::uint8_t> d;
     d.reserve(0x4000);
 
+    static const std::uint32_t magic = *(std::uint32_t*)((char[]){0x7F, 'E', 'L', 'F'});
+
     HGELFHeaderCommonHead *h = (HGELFHeaderCommonHead *)d.data();
-    h->MagicNumber = *(std::uint32_t*)("\x7FELF");
-    h->BitWidth = bitWidth;
+    h->MagicNumber = magic;
+    h->BitWidth = static_cast<std::uint8_t>(bitWidth);
     h->Endianness = endianness;
     h->Type = type;
     h->OSABI = abi;
@@ -89,13 +91,13 @@ HGELFFile32::getBitWidth() const
 HGELFEndianness
 HGELFFile64::getEndianness() const
 {
-    return ((HGELFHeader64*)mData.data())->Endianness;
+    return (HGELFEndianness)((HGELFHeader64*)mData.data())->Endianness;
 }
 
 HGELFEndianness
 HGELFFile32::getEndianness() const
 {
-    return ((HGELFHeader32*)mData.data())->Endianness;
+    return (HGELFEndianness)((HGELFHeader32*)mData.data())->Endianness;
 }
 
 #endif /* HGELFFILE_H */

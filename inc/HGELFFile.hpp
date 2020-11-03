@@ -44,7 +44,6 @@ public:
     virtual std::uint16_t getSectionNameSHTIndex() const = 0;
     virtual HGELFFile &setSectionNameSHTIndex(std::uint16_t nshtndx) = 0;
 
-private:
     HGELFFile();
     ~HGELFFile();
 };
